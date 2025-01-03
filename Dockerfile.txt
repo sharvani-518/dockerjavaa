@@ -1,0 +1,11 @@
+# Use an official OpenJDK runtime as a base image
+FROM openjdk:17-jdk-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the compiled Java class file into the container
+COPY FibonacciDocker.class .
+
+# Set the entry point for the Java program
+ENTRYPOINT ["java", "FibonacciDocker"]
